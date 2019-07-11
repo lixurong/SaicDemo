@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.saic.android.e.list.model.HomeBean" />
+
+        <!--<variable-->
+            <!--name="listener"-->
+            <!--type="android.view.View.OnClickListener" />-->
+
+        <variable
+            name="itemListener"
+            type="com.saic.android.e.list.utils.HomeItemClickListener" />
+        <variable
+            name="viewmodel"
+            type="com.saic.android.e.list.viewmodel.HomeListViewModel"/>
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:background="@drawable/homepage_order_bg"
+        android:gravity="center"
+        android:onClick="@{()->itemListener.onItemClick(bean)}"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="216dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:text="您有一个订单正在服务中…"
+            android:textColor="#ff34495e"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="94dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/homepage_order_btn"
+            android:gravity="center"
+            android:text="进入"
+            android:onClick="@{()->viewmodel.onClick()}"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </LinearLayout>
+</layout>

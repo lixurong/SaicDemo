@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="list"
+            type="java.util.ArrayList&lt;String&gt;" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/go_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goRecycler"
+            android:text="跳转list" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:alignItems="flex_end"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                android:id="@+id/item1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/item_bg"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="3dp"
+                android:text="@{list[0]}"
+                android:textSize="14sp"
+                tools:text="恩恩" />
+
+            <ImageView
+                android:id="@+id/item2"
+                android:layout_margin="5dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_1" />
+
+            <TextView
+                android:id="@+id/item3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/item_bg"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="3dp"
+                android:text="@{list[1]}"
+                android:textSize="14sp"
+                tools:text="恩恩" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/item_bg"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="3dp"
+                android:text="@{list[2]}"
+                android:textSize="14sp"
+                tools:text="恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩恩" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/item_bg"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="3dp"
+                android:text="@{list[3]}"
+                android:textSize="14sp"
+                tools:text="恩恩" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/item_bg"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="3dp"
+                android:text="@{list[4]}"
+                android:textSize="14sp"
+                tools:text="恩恩" />
+        </com.google.android.flexbox.FlexboxLayout>
+    </LinearLayout>
+</layout>

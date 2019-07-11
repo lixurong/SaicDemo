@@ -1,0 +1,5 @@
+include ':app',
+        ':module_login',
+        ':module_list',
+        ':module_ucenter',
+        ':module_flexbox'

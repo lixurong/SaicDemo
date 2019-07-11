@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.saic.android.e.module_flexbox">
+
+    <application>
+        <activity android:name=".FlexboxDemoActivity" />
+        <activity android:name=".FlexboxRecyclerActivity"/>
+    </application>
+</manifest>

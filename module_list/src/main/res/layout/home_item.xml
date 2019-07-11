@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.saic.android.e.list.model.HomeBean" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="listener1"
+            type="com.saic.android.e.list.utils.HomeItemClickListener" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->listener1.onItemClick(bean)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="#F7F9FB"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp">
+
+                <TextView
+                    android:id="@+id/type_tv"
+                    item_type="@{bean.type}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp"
+                    android:textColor="#22C8BF"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/tagsLayout"
+                    item_tags="@{bean.tags}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@{bean.time}"
+                    android:textColor="#ff34495e"
+                    android:textSize="30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="09:15" />
+
+                <TextView
+                    android:id="@+id/state_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="22dp"
+                    android:text="@{bean.state}"
+                    android:textColor="#ff92a1b1"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/time_tv"
+                    app:layout_constraintStart_toStartOf="@+id/time_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/time_tv"
+                    tools:text="预计到达" />
+
+                <View
+                    android:id="@+id/point_start"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/point_start"
+                    app:layout_constraintStart_toEndOf="@+id/time_tv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/start_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@{bean.startPosition}"
+                    android:textColor="#ff34495e"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/point_start"
+                    app:layout_constraintLeft_toRightOf="@+id/point_start"
+                    app:layout_constraintTop_toTopOf="@+id/point_start"
+                    tools:text="上海虹桥国际机场2号航站楼" />
+
+                <View
+                    android:id="@+id/point_end"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/point_end"
+                    app:layout_constraintStart_toStartOf="@+id/point_start"
+                    app:layout_constraintTop_toBottomOf="@+id/start_position" />
+
+                <TextView
+                    android:id="@+id/end_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#ff34495e"
+                    android:textSize="15sp"
+                    android:text="@{bean.endPosition}"
+                    app:layout_constraintBottom_toBottomOf="@+id/point_end"
+                    app:layout_constraintLeft_toRightOf="@+id/point_end"
+                    app:layout_constraintTop_toTopOf="@+id/point_end"
+                    tools:text="建国路与马当路交叉口" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/vertical_line_stroke"
+                    app:layout_constraintBottom_toTopOf="@+id/point_end"
+                    app:layout_constraintLeft_toLeftOf="@+id/point_start"
+                    app:layout_constraintRight_toRightOf="@+id/point_start"
+                    app:layout_constraintTop_toBottomOf="@+id/point_start" />
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#eee" />
+
+            <android.support.constraint.ConstraintLayout
+                visibility="@{bean.note}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/note_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:padding="8dp"
+                    android:text="@{bean.note}"
+                    android:textColor="#ff92a1b1"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/icon_img"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="备注：请师傅能快马加鞭，因为非常的紧急，这是我们一个大客户，所以需要司机会英语，务必好好服务，并且安全送达，谢谢！" />
+
+                <ImageView
+                    android:id="@+id/icon_img"
+                    android:layout_width="21dp"
+                    android:layout_height="26dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/tips_icon_close"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

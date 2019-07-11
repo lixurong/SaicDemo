@@ -1,0 +1,11 @@
+dependencies {
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:+'
+    api 'com.alibaba:arouter-api:+'
+    kapt  'com.alibaba:arouter-compiler:+'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "android.arch.lifecycle:extensions:+"
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+    implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:2.2.0'
+    implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:2.2.0'
+}
