@@ -41,4 +41,6 @@ class DemoActivity : AppCompatActivity(){
         }
         print("x = ${test.x} ,y = ${test.y}")
     }
+
+
 }

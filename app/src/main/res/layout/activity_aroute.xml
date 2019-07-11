@@ -26,6 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/go_login" />
+
     <Button
         android:id="@+id/go_login_with_scheme"
         android:layout_width="wrap_content"
@@ -37,6 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/go_login_with_params" />
+
     <Button
         android:id="@+id/go_ucenter"
         android:layout_width="wrap_content"
@@ -69,4 +71,16 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/go_list" />
+
+    <Button
+        android:id="@+id/go_coroutine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="onClick"
+        android:text="跳转协程"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/go_flexbox" />
+
 </android.support.constraint.ConstraintLayout>

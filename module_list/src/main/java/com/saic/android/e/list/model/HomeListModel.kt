@@ -7,7 +7,7 @@ class HomeListModel : IHomeListModel{
     override fun getDataList():ObservableArrayList<HomeBean>{
         var list = ObservableArrayList<HomeBean>()
         for (i in 0..10) {
-            var bean = HomeBean()
+            var bean = HomeBean("1")
             when (i) {
                 0 -> {
                     bean.style = 1

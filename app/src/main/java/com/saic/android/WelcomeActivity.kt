@@ -17,7 +17,7 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     fun goMain() {
-        RxCountDown.countdown(5)
+        RxCountDown.countdown(1)
                 .doOnComplete {
                     ARouter.getInstance().build("/home/main").navigation()
                     finish()
