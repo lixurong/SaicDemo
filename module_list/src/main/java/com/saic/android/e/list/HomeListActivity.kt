@@ -23,6 +23,7 @@ class HomeListActivity : AppCompatActivity() {
         dataBinding.recycler.addItemDecoration(SpaceItemDecoration())
 
         viewModel = ViewModelProviders.of(this).get(HomeListViewModel::class.java)
+        viewModel.context = this
         dataBinding.viewmodel = viewModel
     }
 }

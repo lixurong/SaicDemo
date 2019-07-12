@@ -1,20 +1,21 @@
 package com.saic.android.e.list.viewmodel
 
-import android.arch.lifecycle.ViewModel
 import android.view.View
+import android.widget.Toast
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.callback.NavCallback
 import com.alibaba.android.arouter.launcher.ARouter
 import com.saic.android.e.list.model.HomeBean
 import com.saic.android.e.list.model.HomeListModel
 import com.saic.android.e.list.utils.HomeItemClickListener
+import com.saic.android.e.module_base.BaseViewModel
 import com.saic.android.e.module_list.BR
 import com.saic.android.e.module_list.R
 import me.tatarka.bindingcollectionadapter2.BindingRecyclerViewAdapter
 import me.tatarka.bindingcollectionadapter2.itembindings.OnItemBindClass
 
 
-class HomeListViewModel : ViewModel() {
+class HomeListViewModel : BaseViewModel() {
 
     private var homeListModel: HomeListModel = HomeListModel()
     var adapter = BindingRecyclerViewAdapter<HomeBean>()
@@ -22,12 +23,12 @@ class HomeListViewModel : ViewModel() {
 
     var itemListener = object : HomeItemClickListener<HomeBean> {
         override fun onItemClick(item: HomeBean) {
-//            item?.run {
-//                whviewmodelen(style){
-//                    0-> Log.i("ivy","这是item布局")
-//                    else-> Log.i("ivy","这是头布局")
-//                }
-//            }
+            item?.run {
+                when (style) {
+                    0 -> Toast.makeText(context, "这是item", Toast.LENGTH_SHORT).show()
+                    else -> Toast.makeText(context, "这是头布局", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 

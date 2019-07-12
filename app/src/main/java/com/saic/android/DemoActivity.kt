@@ -13,9 +13,10 @@ class DemoActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initData()
+//        initData()
 
-        foo()
+//        foo()
+        test()
     }
 
     fun initData(){
@@ -42,5 +43,30 @@ class DemoActivity : AppCompatActivity(){
         print("x = ${test.x} ,y = ${test.y}")
     }
 
+
+
+
+    interface Base {
+        val message: String
+        fun print()
+    }
+
+    class BaseImpl(val x: Int) : Base {
+        override val message = "BaseImpl: x = $x"
+        override fun print() { println(message) }
+    }
+
+    class Derived(b: Base) : Base by b {
+        // 在 b 的 `print` 实现中不会访问到这个属性
+        override val message = "Message of Derived"
+        override fun print() { println("Derived $message") }
+    }
+
+    fun test() {
+        val b = BaseImpl(10)
+        val derived = Derived(b)
+        derived.print()
+        println(derived.message)
+    }
 
 }

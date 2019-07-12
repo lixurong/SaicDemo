@@ -5,21 +5,22 @@
     <data>
 
         <variable
-            name="user"
-            type="com.saic.android.e.login.module.UserBean" />
+            name="viewmodel"
+            type="com.saic.android.e.login.LoginViewModel" />
+
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:padding="15dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="15dp">
 
         <EditText
             android:id="@+id/name_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="用户名"
             android:layout_marginTop="50dp"
+            android:hint="用户名"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,8 +40,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:background="#00f"
+            android:onClick="@{viewmodel::goLogin}"
             android:text="去登录"
-            app:layout_constraintTop_toBottomOf="@id/pwd_et"
-            />
+            android:textColor="#fff"
+            app:layout_constraintTop_toBottomOf="@id/pwd_et" />
     </android.support.constraint.ConstraintLayout>
 </layout>

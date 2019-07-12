@@ -31,4 +31,5 @@ android {
 apply from:'../base_support.gradle'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':module_base')
 }
